@@ -1,7 +1,7 @@
-// This is the code for our secure Oracle Engine.
-// It runs on Vercel, not in the user's browser.
+// This is the final, corrected code for the Oracle Engine.
+// It is written in the universal CommonJS format to work perfectly on Vercel.
 
-export default async function handler(request, response) {
+module.exports = async (request, response) => {
   // 1. Check if the request is a POST request.
   if (request.method !== 'POST') {
     return response.status(405).json({ message: 'Only POST requests are allowed' });
@@ -65,4 +65,4 @@ export default async function handler(request, response) {
     console.error(error);
     return response.status(500).json({ error: 'An internal error occurred.' });
   }
-}
+};
